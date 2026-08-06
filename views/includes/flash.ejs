@@ -1,0 +1,19 @@
+<% if (success && success.length) { %>
+    <div class="alert alert-success alert-dismissible fade show custom-flash-alert" role="alert">
+        <div class="flash-content-wrapper">
+            <i class="fa-solid fa-circle-check flash-icon"></i>
+            <span class="flash-message-text"><%= success %></span>
+        </div>
+        <button type="button" class="btn-close flash-close-btn" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show custom-flash-alert" role="alert">
+        <div class="flash-content-wrapper">
+            <i class="fa-solid fa-circle-exclamation flash-icon"></i>
+            <span class="flash-message-text"><%= error %></span>
+        </div>
+        <button type="button" class="btn-close flash-close-btn" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>

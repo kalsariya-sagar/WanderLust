@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust - Find Your Next Stay</title>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Google Fonts (Plus Jakarta Sans for modern UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Custom Modular CSS Files -->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/flash.css">
+    <link rel="stylesheet" href="/css/filters.css">
+    <link rel="stylesheet" href="/css/listings.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/starability-slot.css">
+    <link rel="stylesheet" href="/css/legal.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <%- include("../includes/navbar.ejs") %>
+
+        <!-- Main Content Wrapper -->
+        <main class="container flex-grow-1 mt-5 pt-3 mb-4">
+            <%- include("../includes/flash.ejs") %>
+                <%- body %>
+        </main>
+
+        <!-- Footer -->
+        <%- include("../includes/footer.ejs") %>
+
+            <!-- Bootstrap 5 JS Bundle -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Leaflet JS -->
+            <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+            <% if (typeof listing !=="undefined" ) { %>
+                <script src="/js/map.js"></script>
+                <% } %>
+
+                    <!-- Custom Scripts -->
+                    <script src="/js/validation.js"></script>
+                    <script src="/js/filters.js"></script>
+                    <script src="/js/taxToggle.js"></script>
+                    <script src="/js/search.js"></script>
+
+</body>
+
+</html>

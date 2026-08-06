@@ -1,0 +1,159 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center my-3 my-md-4">
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="card form-card shadow-sm border-0 rounded-4">
+            <div class="card-body p-3 p-sm-4 p-md-5">
+                <h2 class="text-center fw-bold mb-4 form-title">Add New Listing</h2>
+
+                <form
+                    action="/listings"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    class="needs-validation"
+                    novalidate
+                >
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label fw-semibold">
+                            Title <span class="text-danger">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="title"
+                            class="form-control form-control-custom"
+                            name="listing[title]"
+                            placeholder="e.g. Cozy Beachfront Villa"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter a listing title.
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label fw-semibold">
+                            Description <span class="text-danger">*</span>
+                        </label>
+                        <textarea
+                            id="description"
+                            class="form-control form-control-custom"
+                            name="listing[description]"
+                            rows="4"
+                            placeholder="Describe your property..."
+                            required
+                        ></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a description.
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label fw-semibold">
+                            Upload Image <span class="text-danger">*</span>
+                        </label>
+                        <input
+                            type="file"
+                            id="image"
+                            class="form-control form-control-custom"
+                            name="listing[image]"
+                            accept="image/*"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please upload an image.
+                        </div>
+                    </div>
+
+                    <!-- Price & Country -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label for="price" class="form-label fw-semibold">
+                                Price (₹) <span class="text-danger">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                id="price"
+                                class="form-control form-control-custom"
+                                name="listing[price]"
+                                placeholder="1500"
+                                min="0"
+                                required
+                            >
+                            <div class="invalid-feedback">
+                                Please enter a valid price.
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label for="country" class="form-label fw-semibold">
+                                Country <span class="text-danger">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="country"
+                                class="form-control form-control-custom"
+                                name="listing[country]"
+                                placeholder="India"
+                                required
+                            >
+                            <div class="invalid-feedback">
+                                Please enter the country.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="mb-3">
+                        <label for="location" class="form-label fw-semibold">
+                            Location <span class="text-danger">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="location"
+                            class="form-control form-control-custom"
+                            name="listing[location]"
+                            placeholder="Goa"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter the location.
+                        </div>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="mb-4">
+                        <label for="category" class="form-label fw-semibold">
+                            Category
+                        </label>
+                        <select
+                            id="category"
+                            class="form-select form-control-custom"
+                            name="listing[category]"
+                            required
+                        >
+                            <% categories.forEach((category) => { %>
+                                <option value="<%= category.name %>">
+                                    <%= category.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid pt-2">
+                        <button
+                            type="submit"
+                            class="btn btn-primary-custom btn-lg rounded-3 py-2 fw-bold"
+                        >
+                            <i class="fa-solid fa-plus me-2"></i>
+                            Add Listing
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

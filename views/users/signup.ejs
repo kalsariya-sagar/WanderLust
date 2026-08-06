@@ -1,0 +1,104 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center my-4 my-md-5">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+        <div class="card form-card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+
+                <!-- Page Heading -->
+                <div class="text-center mb-4">
+                    <i class="fa-solid fa-user-plus fa-2x text-danger mb-2"></i>
+                    <h2 class="fw-bold form-title mb-1">Create Account</h2>
+                    <p class="text-muted small">Join WanderLust to book stays and list your property</p>
+                </div>
+
+                <!-- Signup Form -->
+                <form
+                    method="POST"
+                    action="/signup"
+                    class="needs-validation"
+                    novalidate
+                >
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label fw-semibold">
+                            Username
+                        </label>
+                        <input
+                            id="username"
+                            type="text"
+                            name="username"
+                            class="form-control form-control-custom"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter a username.
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">
+                            Email Address
+                        </label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            class="form-control form-control-custom"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-semibold">
+                            Password
+                        </label>
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="form-control form-control-custom"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Password must be at least 6 characters.
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary-custom w-100 py-2 fw-bold rounded-3"
+                        aria-label="Create account"
+                    >
+                        <i class="fa-solid fa-user-plus me-2"></i>
+                        Sign Up
+                    </button>
+                </form>
+
+                <hr class="my-4 text-muted opacity-25">
+
+                <!-- Login Link -->
+                <p class="text-center mb-0 small text-muted">
+                    Already have an account?
+                    <a href="/login" class="fw-bold text-danger text-decoration-none ms-1">
+                        Log In
+                    </a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

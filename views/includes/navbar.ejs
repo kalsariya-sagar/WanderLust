@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm custom-navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold brand-logo" href="/listings">
+            <i class="fa-regular fa-compass brand-icon me-2"></i>
+            <span>WanderLust</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button 
+            class="navbar-toggler custom-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content Collapse -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Search Form (Center aligned in desktop) -->
+            <form class="d-flex mx-lg-auto my-3 my-lg-0 search-form" action="/listings/search" method="GET">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        class="form-control search-input" 
+                        type="search" 
+                        name="q" 
+                        value="<%= typeof q !== 'undefined' ? q : '' %>" 
+                        placeholder="Search destinations..." 
+                        aria-label="Search" 
+                        required
+                    >
+                    <button class="clear-search" id="clearSearch" type="button" aria-label="Clear search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <button class="btn btn-search-submit ms-2" type="submit">
+                    Search
+                </button>
+            </form>
+
+            <!-- Navigation Links (Right Side) -->
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link nav-custom-link" href="/listings">Explore</a>
+                </li>
+
+                <% if (!currUser) { %>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-custom-link" href="/listings/new">Become a Host</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-custom-link" href="/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark btn-sm rounded-pill px-3 ms-lg-2 my-1 my-lg-0" href="/login">Log In</a>
+                    </li>
+
+                <% } else { %>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-custom-link" href="/listings/new">
+                            <i class="fa-solid fa-plus me-1"></i> Add Listing
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-custom-link" href="/wishlist">
+                            <i class="fa-solid fa-heart text-danger me-1"></i> Wishlist
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-custom-link text-muted" href="/logout">
+                            <i class="fa-solid fa-right-from-bracket me-1"></i> Log Out
+                        </a>
+                    </li>
+
+                <% } %>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>

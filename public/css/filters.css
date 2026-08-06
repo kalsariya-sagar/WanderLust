@@ -1,0 +1,162 @@
+.filters-wrapper {
+  background-color: #ffffff;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 58px;
+  z-index: 100;
+  margin-top: -0.5rem;
+}
+
+.filters-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Horizontal Scroll Container */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+
+  /* Hide Scrollbar across all browsers */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.filters::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Individual Filter Item */
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-color);
+  opacity: 0.75;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filter i {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.filter p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.filter:hover,
+.filter.active {
+  opacity: 1;
+  color: var(--dark-color);
+  border-bottom: 2px solid var(--dark-color);
+  padding-bottom: 0.25rem;
+}
+
+.filter.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Scroll Arrow Buttons (Desktop) */
+.scroll-btn {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.scroll-btn:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.scroll-btn i {
+  font-size: 0.75rem;
+  color: var(--dark-color);
+}
+
+/* Tax Toggle Container */
+.tax-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background-color: #ffffff;
+}
+
+.tax-toggle span {
+  margin-right: 0.75rem;
+  color: var(--dark-color);
+}
+
+.tax-toggle .form-check-input {
+  cursor: pointer;
+  height: 1.25rem;
+  width: 2.25rem;
+}
+
+.tax-toggle .form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+
+@media (max-width: 991.98px) {
+  .scroll-btn {
+    display: none; 
+  }
+
+  .filters-wrapper {
+    top: 52px;
+    margin-top: -0.25rem;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .filters {
+    gap: 1.5rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .tax-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 0.85rem;
+  }
+}
